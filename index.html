@@ -3,68 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vien & Tham's Wedding</title>
+    <title>Wedding Landing Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
-            background-color: #2E8B57; /* Dark green */
-            color: #FFFFFF; /* White */
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+
         header, footer {
             text-align: center;
             padding: 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
         }
+
         header h1 {
             font-size: 3em;
             margin: 0;
+            color: #333;
         }
-        section {
-            margin: 40px 0;
+
+        main {
+            padding: 20px;
         }
+
         .section-title {
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
+            color: #555;
         }
-        .content {
+
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        section p {
             text-align: center;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #999;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Vien & Tham's Wedding</h1>
+        <h1>Our Wedding</h1>
     </header>
-    <div class="container">
-        <section id="about">
-            <h2 class="section-title">About Us</h2>
-            <div class="content">
-                <p>Welcome to our wedding page! We are so excited to share our special day with you.</p>
-            </div>
+    <main>
+        <section id="introduction">
+            <h2 class="section-title">Welcome</h2>
+            <p>We are delighted to invite you to our wedding celebration.</p>
         </section>
-        <section id="details">
-            <h2 class="section-title">Wedding Details</h2>
-            <div class="content">
-                <p>Date: June 25, 2023</p>
-                <p>Location: Beautiful Garden, Cityville</p>
-            </div>
+        <section id="event-details">
+            <h2 class="section-title">Event Details</h2>
+            <p>Date: 25th December 2023</p>
+            <p>Venue: Elegant Hall, City Center</p>
         </section>
-        <section id="rsvp">
-            <h2 class="section-title">RSVP</h2>
-            <div class="content">
-                <p>Please let us know if you can make it by filling out the RSVP form.</p>
-            </div>
+        <section id="invitation">
+            <h2 class="section-title">Invitation</h2>
+            <p>Please RSVP by 1st December 2023.</p>
         </section>
-    </div>
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Email: wedding@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2023 Vien & Tham's Wedding. All rights reserved.</p>
+        <p>&copy; 2023 Our Wedding. All rights reserved.</p>
     </footer>
 </body>
 </html>
