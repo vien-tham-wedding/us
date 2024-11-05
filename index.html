@@ -5,62 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viễn & Thắm's Wedding</title>
     <style>
+        /* Base Styles */
         body {
             font-family: 'Georgia', serif;
-            background-color: #E8F5E9; /* Pastel green */
+            background-color: #F0FFF4; /* Very light pastel green */
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+        a {
+            color: #388E3C; /* Green color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            color: #1B5E20;
+        }
+
+        /* Header */
         header {
             padding: 2rem;
-            background-color: #A5D6A7; /* Slightly darker pastel green */
+            background: linear-gradient(135deg, #A5D6A7, #66BB6A); /* Gradient green */
             color: #fff;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        /* Main Content */
         .main-content {
-            padding: 2rem;
+            padding: 3rem;
         }
         .welcome-message {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin: 1rem 0;
+            color: #388E3C;
+            font-style: italic;
         }
         .date-location {
-            font-size: 1.2rem;
-            padding: 1rem;
-            background-color: #A5D6A7;
-            color: #fff;
-            margin: 1rem auto;
+            font-size: 1.3rem;
+            padding: 1.5rem;
+            background-color: #C8E6C9;
+            color: #2E7D32;
+            margin: 1.5rem auto;
             width: fit-content;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        /* Countdown */
         .countdown {
             font-size: 1.2rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             color: #555;
         }
+
+        /* Sections */
         .section {
-            margin: 2rem 0;
+            margin: 2.5rem 0;
+        }
+        .section h2 {
+            color: #388E3C;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .section p {
+            color: #555;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .gallery img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             margin: 0.5rem;
             border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* RSVP Form */
         .rsvp-form input, .rsvp-form button {
             margin: 0.5rem 0;
-            padding: 0.5rem;
+            padding: 0.8rem;
             border-radius: 5px;
             border: 1px solid #A5D6A7;
             font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
+            color: #333;
         }
+        .rsvp-form input {
+            background-color: #E8F5E9;
+        }
+        .rsvp-form button {
+            background-color: #66BB6A;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .rsvp-form button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Footer */
         .footer {
             background-color: #A5D6A7;
             color: #fff;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 1.2rem;
         }
     </style>
 </head>
