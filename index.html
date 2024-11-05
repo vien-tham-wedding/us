@@ -3,86 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Landing Page</title>
+    <title>Viễn & Thắm's Wedding</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
+            background-color: #E8F5E9; /* Pastel green */
             color: #333;
-            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
-        }
-
-        header, footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
         }
-
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #333;
+        header {
+            padding: 2rem;
+            background-color: #A5D6A7; /* Slightly darker pastel green */
+            color: #fff;
+            font-size: 2rem;
         }
-
-        main {
-            padding: 20px;
+        .main-content {
+            padding: 2rem;
         }
-
-        .section-title {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
+        .welcome-message {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .date-location {
+            font-size: 1.2rem;
+            padding: 1rem;
+            background-color: #A5D6A7;
+            color: #fff;
+            margin: 1rem auto;
+            width: fit-content;
+            border-radius: 10px;
+        }
+        .countdown {
+            font-size: 1.2rem;
+            margin: 1rem 0;
             color: #555;
         }
-
-        section {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        .section {
+            margin: 2rem 0;
         }
-
-        section p {
-            text-align: center;
-            font-size: 1.2em;
-            color: #666;
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            margin: 0.5rem;
+            border-radius: 10px;
         }
-
-        footer p {
-            font-size: 1em;
-            color: #999;
+        .rsvp-form input, .rsvp-form button {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #A5D6A7;
+            font-size: 1rem;
+        }
+        .footer {
+            background-color: #A5D6A7;
+            color: #fff;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Our Wedding</h1>
+        Viễn & Thắm's Wedding
     </header>
-    <main>
-        <section id="introduction">
-            <h2 class="section-title">Welcome</h2>
-            <p>We are delighted to invite you to our wedding celebration.</p>
-        </section>
-        <section id="event-details">
-            <h2 class="section-title">Event Details</h2>
-            <p>Date: 25th December 2023</p>
-            <p>Venue: Elegant Hall, City Center</p>
-        </section>
-        <section id="invitation">
-            <h2 class="section-title">Invitation</h2>
-            <p>Please RSVP by 1st December 2023.</p>
-        </section>
-        <section id="contact">
-            <h2 class="section-title">Contact Us</h2>
-            <p>Email: wedding@example.com</p>
-            <p>Phone: +123 456 7890</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Our Wedding. All rights reserved.</p>
+
+    <div class="main-content">
+        <div class="welcome-message">
+            Join us in celebrating our love
+        </div>
+
+        <div class="date-location">
+            <p>Date: January 4, 2025</p>
+            <p>Location: Green Gardens Venue</p>
+        </div>
+
+        <div class="countdown">
+            <p>Countdown: X days left</p> <!-- Update this dynamically if needed -->
+        </div>
+
+        <div class="section">
+            <h2>Our Story</h2>
+            <p>From the moment we met, we knew this was forever...</p>
+        </div>
+
+        <div class="section">
+            <h2>Event Details</h2>
+            <p><strong>Ceremony:</strong> 2 PM at Green Gardens Venue</p>
+            <p><strong>Reception:</strong> 6 PM at Green Gardens Venue</p>
+        </div>
+
+        <div class="section">
+            <h2>RSVP</h2>
+            <form class="rsvp-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="number" placeholder="Number of Guests" required>
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
+
+        <div class="section gallery">
+            <h2>Gallery</h2>
+            <img src="photo1.jpg" alt="Gallery Image 1">
+            <img src="photo2.jpg" alt="Gallery Image 2">
+            <img src="photo3.jpg" alt="Gallery Image 3">
+        </div>
+
+        <div class="section">
+            <h2>Wedding Registry</h2>
+            <p>Visit our registry at [Store 1] [Store 2] [Store 3]</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        Thank you for being a part of our special day!
     </footer>
+
 </body>
 </html>
