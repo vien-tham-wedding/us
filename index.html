@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viễn & Thắm's Wedding</title>
+    <!-- Add Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Lora:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
         /* Base Styles */
         body {
-            font-family: 'Georgia', serif;
-            background-color: #f5f9f8; /* Lighter tint of main color */
+            font-family: 'Lora', serif;
+            background-color: #f5f9f8;
+            /* Lighter tint of main color */
             color: #333;
             margin: 0;
             padding: 0;
@@ -43,7 +48,8 @@
         }
 
         .header-content h1 {
-            font-size: 1.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
             margin: 0;
         }
 
@@ -95,12 +101,14 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
             margin: 0;
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             font-style: italic;
         }
 
@@ -127,12 +135,14 @@
 
         /* Location Section */
         .location {
-            background-color: #e5efed; /* Very light tint */
+            background-color: #e5efed;
+            /* Very light tint */
             padding: 2rem;
             border-radius: 10px;
             max-width: 600px;
             margin: auto;
-            color: #456661; /* Darker shade for text */
+            color: #456661;
+            /* Darker shade for text */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
             position: relative;
@@ -141,7 +151,10 @@
         }
 
         .location h2 {
-            color: #5c8780; /* Darker shade of main color */
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #5c8780;
+            /* Darker shade of main color */
         }
 
         .location iframe {
@@ -171,13 +184,17 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: #5c8780; /* Darker shade of main color */
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #5c8780;
+            /* Darker shade of main color */
             margin-bottom: 10px;
             font-family: 'Playfair Display', Georgia, serif;
         }
 
         .section-title p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
             color: #666;
             font-style: italic;
             font-size: 1.1rem;
@@ -213,8 +230,10 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: #7CAFA5;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: transparent;
+            /* Remove background color */
+            box-shadow: none;
+            /* Remove shadow */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -236,11 +255,20 @@
         }
 
         .fab img {
-            width: 30px;
-            height: 30px;
+            width: 45px;
+            height: 45px;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+            /* Add shadow to image instead */
+            transition: transform 0.3s ease;
         }
 
-        /* Modal Styles */
+        .fab:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Remove or comment out .fab svg styles since we won't use SVG anymore */
+
+        /* Modal Styles - Updated */
         .modal {
             display: none;
             position: fixed;
@@ -248,7 +276,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1001;
             align-items: center;
             justify-content: center;
@@ -260,18 +288,14 @@
         }
 
         .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 400px;
-            width: 90%;
             position: relative;
             text-align: center;
         }
 
         .modal-content h3 {
-            color: #7CAFA5;
-            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
         }
 
         .modal-content img {
@@ -282,18 +306,211 @@
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
+            top: -20px;
+            /* Changed: move button up */
+            right: -20px;
+            /* Changed: move button right */
+            width: 40px;
+            /* Changed: slightly larger */
+            height: 40px;
+            /* Changed: slightly larger */
             border-radius: 50%;
-            background: #f0f0f0;
-            border: none;
+            background: #fff;
+            border: 2px solid #7CAFA5;
+            /* Added: border */
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
+            color: #7CAFA5;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1002;
+            /* Added: ensure button stays on top */
+        }
+
+        .close-modal:hover {
+            background: #f5f9f8;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(124, 175, 165, 0.3);
+        }
+
+        .red-envelope {
+            background: linear-gradient(145deg, #9ec3bc, #7CAFA5);
+            padding: 50px 40px;
+            border-radius: 20px;
+            position: relative;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(145deg, #7CAFA5, #5c8780);
+            transform-origin: top;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal.show .envelope-flap {
+            transform: rotateX(180deg);
+        }
+
+        .envelope-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            transform: translateY(0);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal.show .envelope-content {
+            transform: translateY(-25px);
+        }
+
+        .envelope-content h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #7CAFA5;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-wrapper {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 2px dashed #7CAFA5;
+        }
+
+        .qr-wrapper img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bank-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(145deg, #f5f9f8, #e5efed);
+            border-radius: 12px;
+            border: 1px solid rgba(124, 175, 165, 0.2);
+        }
+
+        .bank-info p {
+            margin: 8px 0;
+            color: #5c8780;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .ceremonies-section {
+            padding: 80px 0;
+            background-color: rgba(124, 175, 165, 0.05);
+        }
+
+        .ceremonies-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .ceremony-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(124, 175, 165, 0.1);
+            flex: 1;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .ceremony-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ceremony-card h3 {
+            color: #7CAFA5;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .ceremony-content {
+            color: #5c8780;
+        }
+
+        .ceremony-date {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #7CAFA5;
+        }
+
+        .ceremony-location {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .ceremony-address {
+            font-style: italic;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .ceremony-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .heart-icon {
+            font-size: 2rem;
+            color: #7CAFA5;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(124, 175, 165, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .ceremonies-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .ceremony-card {
+                width: 100%;
+            }
+
+            .ceremony-divider {
+                transform: rotate(90deg);
+            }
         }
     </style>
 </head>
@@ -323,6 +540,45 @@
         </div>
     </section>
 
+    <!-- Wedding Ceremonies Section -->
+    <section class="ceremonies-section">
+        <div class="section-title">
+            <h2>Lễ Thành Hôn</h2>
+            <p>Trân trọng kính mời</p>
+        </div>
+        <div class="ceremonies-container">
+            <div class="ceremony-card">
+                <h3>Lễ Cưới Nhà Gái</h3>
+                <div class="ceremony-content">
+                    <p class="ceremony-date">09:00 - 03/01/2025</p>
+                    <p class="ceremony-location">Tư gia nhà gái</p>
+                    <p class="ceremony-address">
+                        123 Đường ABC<br>
+                        Phường XYZ, Quận/Huyện<br>
+                        Tỉnh/Thành phố
+                    </p>
+                </div>
+            </div>
+
+            <div class="ceremony-divider">
+                <div class="heart-icon">♥</div>
+            </div>
+
+            <div class="ceremony-card">
+                <h3>Lễ Cưới Nhà Trai</h3>
+                <div class="ceremony-content">
+                    <p class="ceremony-date">11:00 - 04/01/2025</p>
+                    <p class="ceremony-location">Vườn nhà bà cố Lành</p>
+                    <p class="ceremony-address">
+                        Văn Tứ Đông<br>
+                        Cam Hoà, Cam Lâm<br>
+                        Khánh Hoà
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Update Gallery Section HTML -->
     <section id="gallery" class="gallery-section">
         <div class="section-title">
@@ -348,9 +604,8 @@
             <p>Hân hạnh được đón tiếp</p>
         </div>
         <div class="location">
-            <h2>Địa chỉ tổ chức tiệc cưới</h2>
             <p><strong>Thời gian:</strong> 11h00 - Vườn nhà bà cố Lành</p>
-            <p>Văn Tứ Đông, Cam Hoà, Cam Lâm, Khánh Hoà</p>
+            <p>Văn Tứ Đông, Cam Hoà, Cam Lâm, Kh��nh Hoà</p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0992574858888!2d109.1463308098501!3d12.105357088086567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170f500110e6d79%3A0x4482ffb7e8c35f3!2zVsaw4budbiBuaMOgIGLDoCBj4buRIEzDoG5o!5e0!3m2!1svi!2s!4v1730901619044!5m2!1svi!2s"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -360,18 +615,25 @@
 
     <!-- FAB Button -->
     <div class="fab" onclick="openModal()">
-        <img src="gift-icon.png" alt="Gift">
+        <img src="src/imgs/gif_box.png" alt="Gift Box">
     </div>
 
     <!-- Modal -->
     <div class="modal" id="qrModal">
-        <div class="modal-content">
+        <div class="red-envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-content">
+                <h3>Mừng cưới</h3>
+                <div class="qr-wrapper">
+                    <img src="qr-code.jpg" alt="QR Code">
+                </div>
+                <div class="bank-info">
+                    <p>Ngân hàng: ACB</p>
+                    <p>STK: 1234567890</p>
+                    <p>Chủ TK: LÊ Ý VIỄN</p>
+                </div>
+            </div>
             <button class="close-modal" onclick="closeModal()">&times;</button>
-            <h3>Gửi lời chúc mừng</h3>
-            <img src="qr-code.jpg" alt="QR Code">
-            <p>Ngân hàng: VCB</p>
-            <p>STK: 1234567890</p>
-            <p>Chủ TK: NGUYEN VAN VIEN</p>
         </div>
     </div>
 
@@ -387,14 +649,14 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('qrModal').addEventListener('click', function(e) {
+        document.getElementById('qrModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
         // Handle FAB visibility on scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const fab = document.querySelector('.fab');
             const locationSection = document.getElementById('location');
             const triggerPosition = locationSection.offsetTop - window.innerHeight;
