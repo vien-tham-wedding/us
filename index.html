@@ -144,8 +144,8 @@
 
         /* Hero Section */
         .hero {
-            background-image: url('your-image.jpg');
-            /* Replace 'your-image.jpg' with the path to your image */
+            background-image: url('src/imgs/PHAT1683.JPG');
+            /* Landscape default */
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -155,6 +155,16 @@
             color: #fff;
             text-align: center;
             position: relative;
+        }
+
+        @media (orientation: portrait) {
+            .hero {
+                background-image: url('src/imgs/PHAT1687.JPG');
+                /* Portrait image */
+                background-position: 50% center;
+                /* Adjust this value to position the focus on you and your wife */
+                background-size: cover;
+            }
         }
 
         .hero-overlay {
