@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hướng Dẫn Di Chuyển - Viễn & Thắm's Wedding</title>
+
+    <!-- Same favicon and fonts as main page -->
+    <link rel="icon" type="image/png" href="src/imgs/wedding-rings.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --color-primary: #7CAFA5;
+            --color-primary-dark: #5c8780;
+            --color-primary-light: #9ec3bc;
+            --color-text-dark: #456661;
+            --color-text-light: #d5e6e3;
+            --color-bg-light: #f5f9f8;
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-color: var(--color-bg-light);
+            color: var(--color-text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles (same as main page) */
+        header {
+            background: linear-gradient(135deg, #9ec3bc, #7CAFA5);
+            color: #fff;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+
+        .header-content h1 {
+            font-family: 'Ephesis', cursive;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: var(--color-text-light);
+        }
+
+        /* Transportation Guide Styles */
+        .transport-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .transport-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .transport-section h2 {
+            color: var(--color-primary-dark);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .transport-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-primary);
+        }
+
+        .transport-option {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 3px solid var(--color-primary-light);
+            background: var(--color-bg-light);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .transport-option h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .transport-details {
+            margin-left: 1.5rem;
+        }
+
+        .transport-details p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            background: var(--color-primary-light);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .transport-container {
+                margin: 1rem auto;
+            }
+
+            .transport-section {
+                padding: 1.5rem;
+            }
+
+            .transport-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Trang chủ
+            </a>
+            <h1>Hướng Dẫn Di Chuyển</h1>
+        </div>
+    </header>
+
+    <div class="transport-container">
+        <div class="transport-section">
+            <h2>Đến Đắk Lắk (Nhà Gái)</h2>
+            
+            <div class="transport-option">
+                <h3><i class="fas fa-bus"></i> Xe Khách</h3>
+                <div class="transport-details">
+                    <p><strong>Nhà xe được đề xuất:</strong> Phương Trang</p>
+                    <p><strong>Tuyến đường:</strong> TP.HCM - Buôn Ma Thuột</p>
+                    <p><strong>Thời gian di chuyển:</strong> Khoảng 8-10 tiếng</p>
+                    <p><strong>Giá vé tham khảo:</strong> 250.000đ - 350.000đ</p>
+                    <p><strong>Số điện thoại đặt vé:</strong> 1900 6067</p>
+                </div>
+            </div>
+
+            <div class="transport-option">
+                <h3><i class="fas fa-plane"></i> Máy Bay</h3>
+                <div class="transport-details">
+                    <p><strong>Sân bay:</strong> Buôn Ma Thuột (BMV)</p>
+                    <p><strong>Các hãng bay:</strong> Vietnam Airlines, Vietjet Air, Bamboo Airways</p>
+                    <p><strong>Thời gian bay:</strong> Khoảng 1 tiếng từ TP.HCM</p>
+                    <p><strong>Giá vé tham khảo:</strong> 800.000đ - 2.000.000đ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transport-section">
+            <h2>Đến Khánh Hòa (Nhà Trai)</h2>
+            
+            <div class="transport-option">
+                <h3><i class="fas fa-bus"></i> Xe Khách</h3>
+                <div class="transport-details">
+                    <p><strong>Nhà xe được đề xuất:</strong> Phương Trang</p>
+                    <p><strong>Tuyến đường:</strong> TP.HCM - Nha Trang</p>
+                    <p><strong>Thời gian di chuyển:</strong> Khoảng 7-8 tiếng</p>
+                    <p><strong>Giá vé tham khảo:</strong> 200.000đ - 300.000đ</p>
+                    <p><strong>Số điện thoại đặt vé:</strong> 1900 6067</p>
+                </div>
+            </div>
+
+            <div class="transport-option">
+                <h3><i class="fas fa-plane"></i> Máy Bay</h3>
+                <div class="transport-details">
+                    <p><strong>Sân bay:</strong> Cam Ranh (CXR)</p>
+                    <p><strong>Các hãng bay:</strong> Vietnam Airlines, Vietjet Air, Bamboo Airways</p>
+                    <p><strong>Thời gian bay:</strong> Khoảng 1 tiếng từ TP.HCM</p>
+                    <p><strong>Giá vé tham khảo:</strong> 700.000đ - 2.000.000đ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transport-section">
+            <div class="contact-info">
+                <h3>Cần hỗ trợ thêm?</h3>
+                <p>Liên hệ với chúng tôi để được hướng dẫn chi tiết:</p>
+                <p><i class="fas fa-phone"></i> Viễn: [Số điện thoại của bạn]</p>
+                <p><i class="fas fa-phone"></i> Thắm: [Số điện thoại của bạn]</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
