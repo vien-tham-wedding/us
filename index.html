@@ -688,9 +688,23 @@
                 padding: 20px 15px;
             }
 
-            .qr-wrapper img {
-                max-width: 150px;
+            .qr-wrapper {
+                max-width: 200px;
+                /* Smaller on mobile */
             }
+        }
+
+        .qr-wrapper {
+            max-width: 250px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .qr-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
         }
     </style>
 </head>
