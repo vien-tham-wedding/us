@@ -214,11 +214,13 @@
             border-radius: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
-        .gallery img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Add specific adjustments for problematic images */
+        .gallery img[src*="PHAT2058"],
+        .gallery img[src*="PHAT1917"] {
+            object-position: top center;
         }
 
         @media (max-width: 768px) {
@@ -230,6 +232,12 @@
 
             .gallery img {
                 height: 200px;
+            }
+
+            /* Adjust object-position for specific images on mobile */
+            .gallery img[src*="PHAT2058"],
+            .gallery img[src*="PHAT1917"] {
+                object-position: 50% 20%; /* Adjust this percentage to focus on faces */
             }
 
             /* Add these fixes */
@@ -256,6 +264,12 @@
         @media (max-width: 480px) {
             .gallery img {
                 height: 150px;
+            }
+
+            /* Further adjust for smaller screens if needed */
+            .gallery img[src*="PHAT2058"],
+            .gallery img[src*="PHAT1917"] {
+                object-position: 50% 15%; /* Fine-tune for mobile */
             }
 
             .section {
@@ -716,6 +730,43 @@
             display: block;
             border-radius: 8px;
         }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .image-close {
+            position: absolute;
+            right: 35px;
+            top: 25px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .gallery img {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -791,14 +842,14 @@
             <p>Những khoảnh khắc đẹp của chúng tôi</p>
         </div>
         <div class="gallery">
-            <img src="photo1.jpg" alt="Gallery Image 1">
-            <img src="photo2.jpg" alt="Gallery Image 2">
-            <img src="photo3.jpg" alt="Gallery Image 3">
-            <img src="photo4.jpg" alt="Gallery Image 4">
-            <img src="photo5.jpg" alt="Gallery Image 5">
-            <img src="photo6.jpg" alt="Gallery Image 6">
-            <img src="photo7.jpg" alt="Gallery Image 7">
-            <img src="photo8.jpg" alt="Gallery Image 8">
+            <img src="src/imgs/PHAT2128.jpg" alt="Gallery Image 1">
+            <img src="src/imgs/PHAT2162.jpg" alt="Gallery Image 2">
+            <img src="src/imgs/PHAT2058.jpg" alt="Gallery Image 3">
+            <img src="src/imgs/PHAT1917.jpg" alt="Gallery Image 4">
+            <img src="src/imgs/IMG_1804.jpg" alt="Gallery Image 5">
+            <img src="src/imgs/IMG_1875.jpg" alt="Gallery Image 6">
+            <img src="src/imgs/IMG_2046 2.jpg" alt="Gallery Image 7">
+            <img src="src/imgs/IMG_3241.JPG" alt="Gallery Image 8">
         </div>
     </section>
 
@@ -854,6 +905,12 @@
         </div>
     </div>
 
+    <!-- Add this before closing body tag -->
+    <div class="image-modal" id="imageModal">
+        <span class="image-close" onclick="closeImageModal()">&times;</span>
+        <img class="image-modal-content" id="modalImage">
+    </div>
+
     <script>
         function openModal() {
             document.getElementById('qrModal').classList.add('show');
@@ -882,6 +939,34 @@
                 fab.classList.add('show');
             } else {
                 fab.classList.remove('show');
+            }
+        });
+
+        // Add these new functions
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "flex";
+            modalImg.src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = "none";
+            document.body.style.overflow = 'auto';
+        }
+
+        // Add click handlers to all gallery images
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.onclick = function() {
+                openImageModal(this.src);
+            }
+        });
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
             }
         });
     </script>
