@@ -457,33 +457,43 @@
             margin: 10px 0;
         }
 
+        /* Update close-modal styles */
         .close-modal {
             position: absolute;
-            top: -25px;
-            /* Tăng khoảng cách lên trên */
-            right: -25px;
-            /* Tăng khoảng cách sang phải */
+            top: -20px;
+            right: -20px;
             width: 40px;
             height: 40px;
             border-radius: 50%;
             background: #fff;
-            border: 2px solid #7CAFA5;
+            border: none; /* Remove border */
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: #7CAFA5;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-size: 28px;
+            color: var(--color-primary-dark);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             z-index: 1005;
-            /* Tăng z-index để luôn hiện trên cùng */
+            -webkit-appearance: none; /* Fix for iOS */
+            appearance: none;
+            padding: 0; /* Reset padding */
+            line-height: 1; /* Improve vertical alignment */
         }
 
         .close-modal:hover {
             background: #f5f9f8;
             transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(124, 175, 165, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Add specific iOS fixes */
+        @supports (-webkit-touch-callout: none) {
+            .close-modal {
+                transform: translateZ(0); /* Force GPU acceleration */
+                backface-visibility: hidden;
+            }
         }
 
         .red-envelope {
